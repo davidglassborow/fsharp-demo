@@ -7,4 +7,4 @@ open Money
 
 // Define your library scripting code here
 
-Email.sendTestEmail "dave@conceptfirst.com" "test message"
+Email.SendEmail "dave@conceptfirst.com" "test message"
