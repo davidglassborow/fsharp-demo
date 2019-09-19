@@ -4,7 +4,7 @@
 type CreditCardType =
 | MasterCard
 | Visa
-
+//| AmericianExpress   // Uncomment to see errors because not being handled
 
 type Payment =
 | Cash of amount:int
@@ -30,7 +30,21 @@ module Validation =
                     if cardNo = "1234-5678-1234-5678" then fine else invalid
                 | MasterCard ->
                     if cardNo = "8888-7777-6666-5555" then fine else invalid
-                
+
+
+    // Example linked list defined by recursive union type
+    type LList<'t> =
+    | End
+    | Cell of 't * LList<'t>
+
+    let ExampleListInstance = Cell(3,Cell(2,End))
+
+    (* Example of currying in F# *)
+
+    // Example addition function with 2 params
+    let add a b = a + b
+    // This defines a new function expecting just one param, by 'baking in' the 5 as the first parameter
+    let addFive = add 5
 
 
 open System.Net
